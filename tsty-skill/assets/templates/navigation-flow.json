@@ -1,0 +1,81 @@
+{
+  "name": "TEMPLATE-multi-page-navigation",
+  "description": "Multi-page journey pattern - REPLACE all TEMPLATE_ placeholders",
+  "baseUrl": "TEMPLATE_BASE_URL",
+  "failFast": true,
+  "monitorConsole": true,
+  "steps": [
+    {
+      "name": "Page 1",
+      "url": "TEMPLATE_PAGE1_PATH",
+      "expectedUrl": "TEMPLATE_PAGE1_PATH",
+      "capture": {
+        "screenshot": true
+      },
+      "assertions": [
+        {
+          "type": "visible",
+          "selector": "TEMPLATE_PAGE1_INDICATOR"
+        }
+      ]
+    },
+    {
+      "name": "Navigate to Page 2",
+      "primitives": [
+        {
+          "type": "click",
+          "selector": "a:has-text('TEMPLATE_LINK_TEXT')"
+        },
+        {
+          "type": "waitForLoadState",
+          "options": {
+            "state": "networkidle"
+          }
+        }
+      ],
+      "expectedUrl": "TEMPLATE_PAGE2_PATH",
+      "capture": {
+        "screenshot": true,
+        "console": true
+      }
+    },
+    {
+      "name": "Page 2 interaction",
+      "primitives": [
+        {
+          "type": "TEMPLATE_ACTION_TYPE",
+          "selector": "TEMPLATE_ACTION_SELECTOR"
+        }
+      ],
+      "capture": {
+        "screenshot": true
+      },
+      "assertions": [
+        {
+          "type": "visible",
+          "selector": "TEMPLATE_PAGE2_RESULT"
+        }
+      ]
+    },
+    {
+      "name": "Navigate to Page 3",
+      "primitives": [
+        {
+          "type": "click",
+          "selector": "TEMPLATE_NEXT_BUTTON_SELECTOR"
+        },
+        {
+          "type": "waitForLoadState",
+          "options": {
+            "state": "networkidle"
+          }
+        }
+      ],
+      "expectedUrl": "TEMPLATE_PAGE3_PATH",
+      "capture": {
+        "screenshot": true,
+        "console": true
+      }
+    }
+  ]
+}

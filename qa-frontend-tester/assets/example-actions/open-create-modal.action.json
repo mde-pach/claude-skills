@@ -1,0 +1,23 @@
+{
+  "type": "modal",
+  "description": "Open a create item modal",
+  "actions": [
+    {
+      "type": "navigate",
+      "url": "${targetUrl}"
+    },
+    {
+      "type": "wait",
+      "condition": "networkidle"
+    },
+    {
+      "type": "click",
+      "selector": "button:has-text('Create'), button:has-text('New'), button:has-text('Add')"
+    },
+    {
+      "type": "wait",
+      "condition": "timeout",
+      "timeout": 1500
+    }
+  ]
+}

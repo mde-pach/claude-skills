@@ -1,0 +1,35 @@
+{
+  "type": "filter",
+  "description": "Apply filters to a list view",
+  "actions": [
+    {
+      "type": "navigate",
+      "url": "${targetUrl}"
+    },
+    {
+      "type": "wait",
+      "condition": "networkidle"
+    },
+    {
+      "type": "click",
+      "selector": "button:has-text('Filters'), button:has-text('Filter')"
+    },
+    {
+      "type": "wait",
+      "condition": "timeout",
+      "timeout": 500
+    },
+    {
+      "type": "click",
+      "selector": "label:has-text('Active'), input[value='active']"
+    },
+    {
+      "type": "click",
+      "selector": "button:has-text('Apply'), button[type='submit']"
+    },
+    {
+      "type": "wait",
+      "condition": "networkidle"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+# Large bundled skill files (keep the source dirs, not these)
+*.skill.backup
+_archive/
+.DS_Store

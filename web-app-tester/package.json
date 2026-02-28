@@ -1,0 +1,16 @@
+{
+  "name": "web-app-tester",
+  "version": "1.0.0",
+  "description": "Automated web app testing with Playwright",
+  "private": true,
+  "scripts": {
+    "test": "tsx scripts/test.ts"
+  },
+  "dependencies": {
+    "playwright": "^1.49.1",
+    "tsx": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2"
+  }
+}

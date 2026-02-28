@@ -1,0 +1,58 @@
+{
+  "name": "TEMPLATE-login",
+  "description": "Auth flow pattern - REPLACE all TEMPLATE_ placeholders",
+  "baseUrl": "TEMPLATE_BASE_URL",
+  "failFast": true,
+  "monitorConsole": true,
+  "steps": [
+    {
+      "name": "Load login page",
+      "url": "/login",
+      "expectedUrl": "/login",
+      "capture": {
+        "screenshot": true
+      }
+    },
+    {
+      "name": "Fill credentials",
+      "primitives": [
+        {
+          "type": "fill",
+          "selector": "input[name='email']",
+          "value": "${credentials.email}"
+        },
+        {
+          "type": "fill",
+          "selector": "input[name='password']",
+          "value": "${credentials.password}"
+        }
+      ]
+    },
+    {
+      "name": "Submit and verify",
+      "primitives": [
+        {
+          "type": "click",
+          "selector": "button[type='submit']"
+        },
+        {
+          "type": "waitForLoadState",
+          "options": {
+            "state": "networkidle"
+          }
+        }
+      ],
+      "expectedUrl": "TEMPLATE_POST_LOGIN_URL",
+      "capture": {
+        "screenshot": true,
+        "console": true
+      },
+      "assertions": [
+        {
+          "type": "visible",
+          "selector": "TEMPLATE_SUCCESS_INDICATOR"
+        }
+      ]
+    }
+  ]
+}

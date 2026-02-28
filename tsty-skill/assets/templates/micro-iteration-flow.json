@@ -1,0 +1,36 @@
+{
+  "name": "TEMPLATE-test-action",
+  "description": "Test single action in isolation - REPLACE all TEMPLATE_ placeholders",
+  "baseUrl": "TEMPLATE_BASE_URL",
+  "failFast": true,
+  "monitorConsole": true,
+  "steps": [
+    {
+      "name": "Navigate to page",
+      "url": "TEMPLATE_PATH",
+      "expectedUrl": "TEMPLATE_PATH",
+      "capture": {
+        "screenshot": true
+      }
+    },
+    {
+      "name": "Test action",
+      "primitives": [
+        {
+          "type": "TEMPLATE_PRIMITIVE_TYPE",
+          "selector": "TEMPLATE_SELECTOR"
+        }
+      ],
+      "capture": {
+        "screenshot": true,
+        "console": true
+      },
+      "assertions": [
+        {
+          "type": "visible",
+          "selector": "TEMPLATE_ASSERTION_SELECTOR"
+        }
+      ]
+    }
+  ]
+}

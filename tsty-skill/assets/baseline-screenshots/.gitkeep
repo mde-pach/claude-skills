@@ -1,0 +1,11 @@
+# Baseline Screenshots
+
+This directory stores reference screenshots for visual regression testing.
+
+When a page's visual layout is approved, save its screenshot here as a baseline:
+
+```bash
+cp ./screenshots/dashboard.png ./baseline-screenshots/dashboard-baseline.png
+```
+
+Future tests can compare new screenshots against these baselines to detect unintended visual regressions.

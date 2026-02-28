@@ -1,0 +1,72 @@
+{
+  "name": "TEMPLATE-form-submission",
+  "description": "Form submission pattern - REPLACE all TEMPLATE_ placeholders",
+  "baseUrl": "TEMPLATE_BASE_URL",
+  "failFast": true,
+  "monitorConsole": true,
+  "steps": [
+    {
+      "name": "Navigate to form",
+      "url": "TEMPLATE_FORM_PAGE_PATH",
+      "expectedUrl": "TEMPLATE_FORM_PAGE_PATH",
+      "capture": {
+        "screenshot": true
+      }
+    },
+    {
+      "name": "Fill form fields",
+      "primitives": [
+        {
+          "type": "fill",
+          "selector": "input[name='TEMPLATE_FIELD1']",
+          "value": "TEMPLATE_VALUE1"
+        },
+        {
+          "type": "fill",
+          "selector": "input[name='TEMPLATE_FIELD2']",
+          "value": "TEMPLATE_VALUE2"
+        },
+        {
+          "type": "selectOption",
+          "selector": "select[name='TEMPLATE_SELECT']",
+          "options": {
+            "value": "TEMPLATE_OPTION_VALUE"
+          }
+        },
+        {
+          "type": "check",
+          "selector": "input[type='checkbox'][name='TEMPLATE_CHECKBOX']"
+        }
+      ],
+      "capture": {
+        "screenshot": true
+      }
+    },
+    {
+      "name": "Submit form",
+      "primitives": [
+        {
+          "type": "click",
+          "selector": "button[type='submit']"
+        },
+        {
+          "type": "waitForLoadState",
+          "options": {
+            "state": "networkidle"
+          }
+        }
+      ],
+      "expectedUrl": "TEMPLATE_SUCCESS_URL",
+      "capture": {
+        "screenshot": true,
+        "console": true
+      },
+      "assertions": [
+        {
+          "type": "visible",
+          "selector": "TEMPLATE_SUCCESS_MESSAGE_SELECTOR"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "type": "interaction",
+  "description": "Select option from dropdown",
+  "actions": [
+    {
+      "type": "navigate",
+      "url": "${targetUrl}"
+    },
+    {
+      "type": "wait",
+      "condition": "networkidle"
+    },
+    {
+      "type": "click",
+      "selector": "select[name='category'], button[role='combobox']"
+    },
+    {
+      "type": "wait",
+      "condition": "timeout",
+      "timeout": 300
+    },
+    {
+      "type": "click",
+      "selector": "option:has-text('Technology'), [role='option']:has-text('Technology')"
+    },
+    {
+      "type": "wait",
+      "condition": "timeout",
+      "timeout": 500
+    }
+  ]
+}

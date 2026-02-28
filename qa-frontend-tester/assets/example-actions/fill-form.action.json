@@ -1,0 +1,34 @@
+{
+  "type": "form",
+  "description": "Fill a form with sample data",
+  "actions": [
+    {
+      "type": "navigate",
+      "url": "${targetUrl}"
+    },
+    {
+      "type": "wait",
+      "condition": "networkidle"
+    },
+    {
+      "type": "fill",
+      "selector": "input[name='name'], input[placeholder*='Name']",
+      "value": "Test Item"
+    },
+    {
+      "type": "fill",
+      "selector": "textarea[name='description'], textarea[placeholder*='Description']",
+      "value": "This is a test description for the form"
+    },
+    {
+      "type": "fill",
+      "selector": "input[name='email'], input[type='email']",
+      "value": "test@example.com"
+    },
+    {
+      "type": "wait",
+      "condition": "timeout",
+      "timeout": 500
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "type": "navigation",
+  "description": "Navigate through multiple pages",
+  "actions": [
+    {
+      "type": "navigate",
+      "url": "${baseUrl}/dashboard"
+    },
+    {
+      "type": "wait",
+      "condition": "networkidle"
+    },
+    {
+      "type": "click",
+      "selector": "a:has-text('Settings'), nav a[href*='settings']"
+    },
+    {
+      "type": "wait",
+      "condition": "networkidle"
+    },
+    {
+      "type": "click",
+      "selector": "a:has-text('Profile'), button:has-text('Profile')"
+    },
+    {
+      "type": "wait",
+      "condition": "networkidle"
+    }
+  ]
+}

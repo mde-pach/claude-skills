@@ -1,0 +1,19 @@
+{
+  "name": "TEMPLATE-discovery",
+  "description": "HTML capture for new pages - REPLACE all TEMPLATE_ placeholders",
+  "baseUrl": "TEMPLATE_BASE_URL",
+  "failFast": true,
+  "monitorConsole": true,
+  "steps": [
+    {
+      "name": "Capture page",
+      "url": "TEMPLATE_PATH",
+      "expectedUrl": "TEMPLATE_PATH",
+      "capture": {
+        "screenshot": true,
+        "html": true,
+        "console": true
+      }
+    }
+  ]
+}

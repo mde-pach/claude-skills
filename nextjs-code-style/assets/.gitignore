@@ -1,0 +1,50 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Testing
+coverage
+
+# Next.js
+.next
+out
+build
+dist
+
+# Production
+.vercel
+.railway
+
+# Env files
+.env
+.env*.local
+.env.production
+
+# Debug
+*.log*
+
+# Lock files (keep bun.lockb only)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# OS
+.DS_Store
+*.pem
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Prisma
+# Keep migrations, ignore generated client
+node_modules/.prisma
+
+# Misc
+.turbo
+*.tsbuildinfo
+next-env.d.ts
